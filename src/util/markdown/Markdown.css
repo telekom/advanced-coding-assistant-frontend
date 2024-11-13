@@ -1,0 +1,210 @@
+menu,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.markdown {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.markdown h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.markdown :where(h3) {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 0.6em;
+  margin-top: 1.6em;
+}
+
+.markdown a {
+  color: #2964aa;
+  font-weight: 400;
+  text-decoration-line: underline;
+}
+.markdown :where(.markdown > :last-child) {
+  margin-bottom: 0;
+}
+.markdown :where(p) {
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.markdown :where(ul ul, ul ol, ol ul, ol ol) {
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+.markdown :where(ol) {
+  list-style-type: decimal;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  padding-left: 1.625rem;
+}
+
+.markdown :where(ul) {
+  list-style-type: disc;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  padding-left: 1.625rem;
+}
+.markdown :where(li) {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.markdown :where(ol > li) {
+  padding-left: 0.375rem;
+}
+.markdown :where(.markdown > ul > li > :first-child) {
+  margin-top: 1.25rem;
+}
+
+.markdown :where(.markdown > :first-child) {
+  margin-top: 0;
+}
+
+.markdown :where(hr) {
+  border-top-width: 1px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.markdown :where(h3) {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.markdown :where(a) {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.markdown :where(code) {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.markdown table {
+  border-collapse: separate;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+  width: 100%;
+  border-spacing: 0 0;
+}
+.markdown td,
+.markdown th {
+  border: 1px solid #000;
+}
+
+.markdown :where(table) {
+  font-size: 0.875rem;
+  line-height: 1.7142857;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  table-layout: auto;
+  text-align: left;
+  width: 100%;
+}
+
+.markdown :where(thead) {
+  border-bottom-color: #d1d5db;
+  border-bottom-width: 1px;
+}
+.markdown th {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-width: 1px;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-left-width: 1px;
+  border-top-width: 1px;
+  padding: 0.25rem 0.75rem;
+}
+
+.markdown th:first-child {
+  border-top-left-radius: 0.375rem;
+}
+.markdown th:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: 0.375rem;
+}
+
+.markdown :where(tbody tr) {
+  border-bottom-color: #e5e7eb;
+  border-bottom-width: 1px;
+}
+
+.markdown td {
+  border-bottom-width: 1px;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-left-width: 1px;
+  padding: 0.25rem 0.75rem;
+}
+.markdown :where(tbody td:first-child, tfoot td:first-child) {
+  padding-left: 0;
+}
+.markdown td:last-child {
+  border-right-width: 1px;
+}
+
+.markdown :where(tbody td:last-child, tfoot td:last-child) {
+  padding-right: 0;
+}
+.markdown :where(tbody td) {
+  vertical-align: baseline;
+}
+.markdown :where(thead th:last-child) {
+  padding-right: 0;
+}
+.markdown :where(thead th) {
+  color: #0d0d0d;
+  font-weight: 600;
+  padding-bottom: 0.5714286rem;
+  padding-left: 0.5714286rem;
+  padding-right: 0.5714286rem;
+  vertical-align: bottom;
+}
+
+@media (max-width: 700px) {
+  .markdown :where(ul ul, ul ol, ol ul, ol ol) {
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .markdown :where(ol) {
+    list-style-type: decimal;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .markdown :where(ul) {
+    list-style-type: disc;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+  .markdown :where(li) {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .markdown :where(ol > li) {
+    padding-left: 0.375rem;
+  }
+  .markdown :where(.markdown > ul > li > :first-child) {
+    margin-top: 1rem;
+  }
+  .markdown table {
+    display: block;
+    width: auto;
+    overflow-x: auto;
+  }
+}
