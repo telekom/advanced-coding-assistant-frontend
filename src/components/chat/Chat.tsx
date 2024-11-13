@@ -21,7 +21,6 @@ const Chat: React.FC<ChatProps> = memo(({ navbar, outlet, userInput, toaster, pe
     if (bottomDivElementRef.current) {
       const isVisible = isScrolledIntoView(bottomDivElementRef);
       setIsBottom(isVisible);
-      console.log(isVisible);
     }
   };
 
@@ -38,7 +37,11 @@ const Chat: React.FC<ChatProps> = memo(({ navbar, outlet, userInput, toaster, pe
           <div className="pt-12">{outlet}</div>
           <div className="h-1" ref={bottomDivElementRef} />
         </main>
-        {!isBottom && <ScrollToBottom bottomDivElementRef={bottomDivElementRef} />}
+        {
+          <div hidden={isBottom}>
+            <ScrollToBottom bottomDivElementRef={bottomDivElementRef} />
+          </div>
+        }
         {userInput}
       </div>
       {toaster}
