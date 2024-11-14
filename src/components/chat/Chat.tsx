@@ -3,7 +3,8 @@ import { setActiveConversation } from '@/redux/ConversationSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/Store';
 import { useRef, useState, useEffect, memo } from 'react';
 import { ChatProps } from '@/interfaces/ChatProps';
-import { isScrolledIntoView, ScrollToBottom } from '@/hooks/Scrollbar';
+import { isScrolledIntoView } from '@/hooks/Scrollbar';
+import { CircleArrowDown } from 'lucide-react';
 
 const Chat: React.FC<ChatProps> = memo(({ navbar, outlet, userInput, toaster, persistenceOption }) => {
   const bottomDivElementRef = useRef<HTMLDivElement>(null);
@@ -23,9 +24,14 @@ const Chat: React.FC<ChatProps> = memo(({ navbar, outlet, userInput, toaster, pe
       setIsBottom(isVisible);
     }
   };
+  const handleScrollDown = () => {
+    if (bottomDivElementRef.current) {
+      bottomDivElementRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
-    handleScroll();
+    handleScrollDown();
   }, [messagesData]);
 
   return (
@@ -37,11 +43,13 @@ const Chat: React.FC<ChatProps> = memo(({ navbar, outlet, userInput, toaster, pe
           <div className="pt-12">{outlet}</div>
           <div className="h-1" ref={bottomDivElementRef} />
         </main>
-        {
-          <div hidden={isBottom}>
-            <ScrollToBottom bottomDivElementRef={bottomDivElementRef} />
-          </div>
-        }
+        {!isBottom && (
+          <CircleArrowDown
+            onClick={handleScrollDown}
+            className="absolute bottom-24 h-8 w-8 right-[50%] rounded-full cursor-pointer transition-opacity duration-300 z-10"
+          />
+        )}
+
         {userInput}
       </div>
       {toaster}
