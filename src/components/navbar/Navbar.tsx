@@ -22,7 +22,6 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(fetchAllConversations());
-    console.log('Navbar');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
